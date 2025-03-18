@@ -1,0 +1,39 @@
+from math import *
+from heapq import heappop, heappush
+from itertools import combinations
+from collections import defaultdict, deque
+from bisect import bisect_left, bisect_right
+from sys import stdin, setrecursionlimit
+from functools import reduce
+import random
+
+input = stdin.readline
+setrecursionlimit(10 ** 6)
+
+INF = int(1e10)
+
+if __name__ == '__main__':
+    N= int(input())
+    word = '666'
+    a = N//16
+    b = N%16
+
+    if a!=0:
+        if b<7 and b!=0:
+            print(str(a)+str(b-1)+word)
+        elif b>=7 and b!=0:
+            print(str(a) + word + str(b - 1))
+        elif b >= 7 and b == 0:
+            print(str(a) + word + str(b))
+        else:
+            print(str(a) + str(b) + word)
+    else:
+        if b < 7 and b != 0:
+            print(str(a) + str(b - 1) + word)
+        elif b >= 7 and b != 0:
+            print(str(a) + word + str(b - 1))
+        elif b >= 7 and b == 0:
+            print(str(a) + word + str(b))
+        else:
+            print(str(a) + str(b) + word)
+
